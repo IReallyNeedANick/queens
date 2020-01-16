@@ -1,9 +1,18 @@
-package compileworks.queens;
+package compileworks.queens.backtracking;
+
+import compileworks.queens.util.QueensUtil;
 
 import java.time.Duration;
 import java.time.Instant;
 
+/**
+ * this is the total first algorithm I created and was not checked much and should be treated as such :)
+ */
+@Deprecated
 public class QueensNaiveBacktracking {
+
+    static int H = 0;
+    static int SAFE = 0;
 
     private boolean isSafe(boolean[][] chessBoard, int x, int y) {
         SAFE++;
@@ -72,7 +81,7 @@ public class QueensNaiveBacktracking {
 
         if (printSolution) {
             if (calcRecursive) {
-                QueenUtil.printSolution(chessBoard);
+                QueensUtil.printSolution(chessBoard);
 
             } else {
                 System.out.println("no solution found");
@@ -88,8 +97,6 @@ public class QueensNaiveBacktracking {
 
     }
 
-    static int H = 0;
-    static int SAFE = 0;
 
     private boolean calcRecursive(boolean[][] chessBoard, int column) {
         H++;
