@@ -178,8 +178,12 @@ public class ChessboardData {
         }
         map.get(key).add(position);
         if (addConflict) {
+            int size = map.get(key).size();
 
-            if (map.get(key).size() >= 2) {
+            if (size >= 2) {
+                if (size >= 3) {
+                    conflicts[position.x] = conflicts[position.x] + size - 2;
+                }
                 map.get(key).forEach(pos -> conflicts[pos.x]++);
             }
         }
